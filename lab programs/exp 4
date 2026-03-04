@@ -1,0 +1,17 @@
+import pandas as pd
+
+property_data = pd.DataFrame({
+    'PropertyID': [101,102,103],
+    'Location': ['City','City','Town'],
+    'Bedrooms': [3,5,4],
+    'Area': [1200,2000,1500],
+    'Price': [500000,800000,600000]
+})
+
+avg_price = property_data.groupby('Location')['Price'].mean()
+more_than_4 = property_data[property_data['Bedrooms'] > 4]
+largest_area = property_data.loc[property_data['Area'].idxmax()]
+
+print(avg_price)
+print(len(more_than_4))
+print(largest_area)
