@@ -1,0 +1,12 @@
+import pandas as pd
+
+data = {
+    "Product": ["Laptop", "Mobile", "Tablet", "Headphones", "Watch", "Camera"],
+    "Sales": [150, 300, 120, 200, 180, 90]
+}
+
+df = pd.DataFrame(data)
+
+top5 = df.sort_values(by="Sales", ascending=False).head(5)
+
+print(top5)
