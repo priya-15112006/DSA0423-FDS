@@ -1,0 +1,14 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+control = np.array([5,6,7,5,6])
+treatment = np.array([8,9,7,10,9])
+
+t,p = stats.ttest_ind(control,treatment)
+
+print("p-value:",p)
+
+plt.boxplot([control,treatment])
+plt.xticks([1,2],["Control","Treatment"])
+plt.show()
