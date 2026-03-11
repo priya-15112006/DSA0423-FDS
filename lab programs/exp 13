@@ -1,0 +1,9 @@
+reviews = ["Good product", "Very good quality", "Good and useful"]
+
+freq = {}
+for review in reviews:
+    words = review.lower().split()
+    for word in words:
+        freq[word] = freq.get(word,0)+1
+
+print(freq)
